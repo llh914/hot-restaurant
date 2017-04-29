@@ -45,7 +45,7 @@
         </div>
         <footer>
             <p>Control Panel</p>
-            <a href="#" id="clear">Clear Table</a> |
+            <a href="" id="clear">Clear Table</a> |
             <a href="/api/tables">API Table Link</a> |
             <a href="/api/waitlist">API Wait List</a>
         </footer>
@@ -76,6 +76,11 @@
             $('#waitingSection').append(waitingReserve);
         }
 
+    });
+    $('#clear').on("click", function(event) {
+        $.post('/api/clear', function(data) {
+            location.reload();
+        });
     });
     </script>
 </body>

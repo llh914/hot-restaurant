@@ -118,6 +118,10 @@ app.get("/api/waitlist/:name?", function(req, res) {
     }
     return res.json(waiting);
 });
+app.post('/api/clear', function(req, res) {
+    tables = [];
+    waiting = [];
+});
 
 //Add New Reservations
 
@@ -129,7 +133,7 @@ app.post("/api/new", function(req, res) {
     } else {
         waiting.push(newtable);
         res.json(newtable);
-    }     
+    }
 });
 
 app.listen(PORT, function() {
